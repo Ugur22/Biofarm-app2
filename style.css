@@ -27,9 +27,6 @@ html {
         width: 15px;
         height: 15px;
     }
-    50%{
-        opacity: 1;
-    }
     100% {
         top: 250px;
         width: 30px;
@@ -47,7 +44,7 @@ html {
 
 @keyframes flybyFly {
     0% {
-        left: -20%;
+        left: 0%;
         opacity: 0;
     }
 
@@ -56,7 +53,7 @@ html {
     }
 
     100% {
-        left: 120%;
+        left: 100%;
         opacity: 0;
     }
 }
@@ -67,11 +64,12 @@ body {
 
 a#addTree {
     margin: 10px;
+    color: #086b24;
+    padding-left: 20px;
 }
 
 body h4 {
-    color: #000000;
-    font-weight:bold ;
+    color: #fff;
     width: 141px;
 }
 
@@ -129,8 +127,22 @@ p {
 
 .billboard h2 {
     margin: 0;
+    letter-spacing: 7px !important;
+    font-weight: bold !important;
+    font-size: 38px !important;
+
 }
 
+.mainText {
+    font-size: 26px;
+    padding: 200px 200px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    line-height: 45px;
+    letter-spacing: 2px;
+}
 .main-layout {
     lost-center: 90%;
     margin-top: 20px;
@@ -376,5 +388,4 @@ textarea.static-input {
 /*GEEFT DE VOGEL EEN POSITIE  */
 #flyby {
     position: relative;
-    opacity: 0;
 }
