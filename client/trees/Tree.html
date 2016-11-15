@@ -1,0 +1,22 @@
+<template name="Tree">
+
+
+    <!--dit voegt een vogel to aan de template van de boom.-->
+    <img id="flyby" height="100px" src="/images/vogel.png" alt="">
+
+
+
+    <article class="tree">
+        <img id="raindrop" src="/images/raindrop.png" alt="">
+        <div id="tree">
+            <img id="imgTree" height="300px" src="/images/tree.black.png" alt="">
+        </div>
+        <button class="update">Give Water</button>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{health}}%">
+            </div>
+        </div>
+        <h4>Tree Health: {{health}}</h4>
+    </article>
+</template>

@@ -1,0 +1,12 @@
+<template name="Trees">
+    <!--<h1>{{userData}}</h1>-->
+    <section class="trees">
+        {{#if Template.subscriptionsReady}}
+            {{#each trees}}
+                {{> Tree}}
+            {{/each}}
+        {{else}}
+            <p>Loading</p>
+        {{/if}}
+    </section>
+</template>

@@ -1,0 +1,380 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+@media screen and (max-width: 480px) {
+    img#imgTree {
+        width: 100%;
+    }
+}
+
+/*Waterdruppel in de GIVE WATER animatie */
+
+.animate {
+    -webkit-animation: raindropFall 2s ;
+    animation: raindropFall 2s ;
+}
+
+@keyframes raindropFall {
+    0% {
+        top: 0px;
+        width: 15px;
+        height: 15px;
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        top: 250px;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+}
+
+/*Vogel in de GIVE WATER animatie */
+
+.animate1 {
+    -webkit-animation: flybyFly 5s;
+    animation: flybyFly 5s;
+}
+
+@keyframes flybyFly {
+    0% {
+        left: -20%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+body {
+    padding: 70px 0 150px;
+}
+
+a#addTree {
+    margin: 10px;
+}
+
+body h4 {
+    color: #000000;
+    font-weight:bold ;
+    width: 141px;
+}
+
+body img#raindrop {
+    width: 20px;
+    margin-left: 150px;
+    margin-top: 10px;
+    height: 20px;
+    Position: relative;
+}
+
+header {
+    color: #fff;
+    background: #2ecc71;
+    padding: 20px;
+    fixed: top left;
+    width: 100%;
+    height: 70px;
+    z-index: 7;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6em;
+    float: left;
+}
+
+header .login-buttons-dropdown-align- {
+    float: right;
+}
+
+header .login-buttons-dropdown-align- a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p {
+    color: #333;
+}
+
+.page-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.billboard {
+    background: #2ecc71;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    padding: 60px;
+    opacity: 0.90;
+}
+
+.billboard h2 {
+    margin: 0;
+}
+
+.main-layout {
+    lost-center: 90%;
+    margin-top: 20px;
+}
+
+.new-tree {
+    margin-bottom: 20px;
+}
+
+.new-tree-container {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.new-tree-container .fa-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.new-tree-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.new-tree-container textarea,
+.new-tree-container input {
+    width: 100%;
+}
+
+.btn,
+button {
+    display: inline-block;
+    cursor: pointer;
+    background: #2ecc71;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border: solid 3px #2ecc71;
+    border-radius: 2px;
+    font-weight: 800;
+}
+
+.btn:hover,
+button:hover {
+    background: #1ab85d;
+    border-color: #2ecc71;
+}
+
+.btn.btn-primary,
+button.btn-primary {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    color: forestgreen;
+}
+
+.btn.btn-primary:hover,
+button.btn-primary:hover {
+    background: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn.btn-deny,
+button.btn-deny {
+    background: #f00;
+    border: solid 3px #f00;
+}
+
+.btn.btn-deny:hover,
+button.btn-deny:hover {
+    background: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn.btn-text,
+button.btn-text {
+    color: forestgreen;
+    background: transparent;
+    border: solid 2px forestgreen;
+}
+
+.btn.btn-text:hover,
+button.btn-text:hover {
+    background: #008080;
+    border-color: #008080;
+}
+
+.btn.btn-text-dark,
+button.btn-text-dark {
+    color: #fff;
+    background: transparent;
+    border: solid 2px #fff;
+}
+
+.btn.btn-text-dark:hover,
+button.btn-text-dark:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+.btn.btn-confirmation,
+button.btn-confirmation {
+    color: #000;
+    background: #008000;
+    border: solid 2px #008000;
+}
+
+.btn.btn-confirmation:hover,
+button.btn-confirmation:hover {
+    background: #006c00;
+    border-color: #2ecc71;
+}
+
+.btn.btn-cancel,
+button.btn-cancel {
+    color: #fff;
+    background: transparent;
+    border: solid 2px #fff;
+    opacity: 0.4;
+}
+
+.btn.btn-cancel:hover,
+button.btn-cancel:hover {
+    background: #f00;
+    color: #fff;
+    opacity: 1;
+    border-color: #2ecc71;
+}
+
+input,
+select,
+textarea {
+    color: forestgreen;
+    background: #fff;
+    border: solid 2px forestgreen;
+    border-radius: 2px;
+    font-weight: 800;
+    width: 100%;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+}
+
+input.static-input,
+select.static-input,
+textarea.static-input {
+    border: none;
+    background: transparent;
+}
+
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+
+.panel-body .form-group {
+    lost-column: 1/2;
+}
+
+.autoform-remove-item.btn {
+    background: grey;
+    box-shadow: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 1em;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    display: block;
+    padding: 0;
+}
+
+.autoform-add-item.btn {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    background: forestgreen;
+}
+
+.autoform-remove-item-wrap {
+    vertical-align: middle;
+}
+
+.tree {
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 60%;
+}
+
+.tree .btn-primary,
+.tree .btn-deny {
+    display: block;
+}
+
+.tree.in-menu {
+    background: #008080;
+    color: #fff;
+}
+
+.tree.in-menu h3 {
+    border-bottom: rgba(255, 255, 255, 0.6) solid 3px;
+}
+
+.tree h3 {
+    font-size: 3em;
+    opacity: 0.3;
+    border-bottom: rgba(0, 0, 0, 0.3) solid 3px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.tree button {
+    margin-top: 20px;
+}
+
+.tree button .btn-primary {
+    display: block;
+}
+
+
+/*Video van de home screen*/
+#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/*GEEFT DE VOGEL EEN POSITIE  */
+#flyby {
+    position: relative;
+    opacity: 0;
+}
