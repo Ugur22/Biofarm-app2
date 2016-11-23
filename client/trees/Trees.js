@@ -52,18 +52,11 @@ Template.Trees.events({
             var div = document.getElementById("rain");
             div.innerHTML = "";
         }, 1000);
-
-        // var raindrop = document.getElementById("raindrop");
-        // event.preventDefault();
-        // raindrop.className = "animate";
-        // setTimeout(
-        //     function () {
-        //         raindrop.className = "";
-        //     }, 2000);
-
-
         if (this.health >= 25) {
             document.getElementById("imgTree").src = "/images/tree.dead.png";
+            var flyby = document.getElementById("flyby");
+            event.preventDefault();
+            flyby.className = "animate1";
         }
 
         if (this.health >= 50) {
@@ -76,6 +69,9 @@ Template.Trees.events({
         }
 
         if (this.health >= 100) {
+            flyby = document.getElementById("flyby");
+            event.preventDefault();
+            flyby.className = "";
             document.getElementById("imgTree").src = "/images/tree.black.png";
             Trees.update(this._id, {
                 $set: {health: 0},
@@ -90,16 +86,10 @@ Template.Trees.events({
 
 Template.Trees.events({
 
-    // //animatie voor vogel?
-    // 'click .update'(event) {
-    //     var flyby = document.getElementById("flyby");
-    //     event.preventDefault();
-    //     flyby.className = "animate1";
-    //     setTimeout(
-    //         function () {
-    //             flyby.className = "";
-    //         }, 3000);
-    // }
+    //animatie voor vogel?
+    'click .update'(event) {
+
+    }
 
 });
 

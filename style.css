@@ -72,6 +72,7 @@ body {
 .animate1 {
     -webkit-animation: flybyFly 5s;
     animation: flybyFly 5s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes flybyFly {
