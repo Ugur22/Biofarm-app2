@@ -6,6 +6,13 @@ Template.Trees.onCreated(function () {
     });
 });
 
+Template.NewTree.onCreated(function () {
+    var self = this;
+    self.autorun(function () {
+        self.subscribe('trees');
+    });
+});
+
 
 var nbDrop = 858;
 
@@ -31,6 +38,14 @@ function createRain() {
 Template.Trees.helpers({
     trees: ()=> {
         return Trees.find({});
+    }
+});
+
+Template.NewTree.helpers({
+    treesCount: ()=> {
+        var treeAmount = Trees.find().count();
+
+        return treeAmount;
     }
 });
 

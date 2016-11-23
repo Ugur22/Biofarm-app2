@@ -1,0 +1,12 @@
+<template name="Worlds">
+    <!--<h1>{{userData}}</h1>-->
+    <section class="worlds">
+        {{#if Template.subscriptionsReady}}
+            {{#each worlds}}
+                {{> World}}
+            {{/each}}
+        {{else}}
+            <p>Loading</p>
+        {{/if}}
+    </section>
+</template>
