@@ -1,5 +1,5 @@
-World = new Mongo.Collection('world');
-World.allow({
+Worlds = new Mongo.Collection('worlds');
+Worlds.allow({
     insert: function (userId, doc) {
         return !!userId;
     },
@@ -31,4 +31,4 @@ WorldSchema = new SimpleSchema({
     }
 });
 
-World.attachSchema(WorldSchema);
+Worlds.attachSchema(WorldSchema);
