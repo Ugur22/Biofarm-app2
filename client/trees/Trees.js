@@ -7,6 +7,27 @@ Template.Trees.onCreated(function () {
 });
 
 
+var nbDrop = 858;
+
+// function to generate a random number range.
+function randRange(minNum, maxNum) {
+    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+// function to generate drops
+function createRain() {
+
+    for (var i = 1; i < nbDrop; i++) {
+        var dropLeft = randRange(500, 1100);
+        var dropTop = randRange(-1000, 1400);
+
+        $('.rain').append('<div class="drop" id="drop' + i + '"></div>');
+        $('#drop' + i).css('left', dropLeft);
+        $('#drop' + i).css('top', dropTop);
+    }
+
+}
+
 Template.Trees.helpers({
     trees: ()=> {
         return Trees.find({});
@@ -22,34 +43,23 @@ Template.Trees.helpers({
     }
 });
 
-function createObject(x_pos, y_pos, tagname) {
-    let object = document.createElement(tagname);
-    object.style.left = `${x_pos}px`;
-    object.style.top = `${y_pos}px`;
-    return object;
-}
-
-var displayObjects = () => {
-    var tree = document.getElementById("tree");
-    var randomX = Math.floor(Math.random() * 2) + 1;
-    var randomY = Math.floor(Math.random() * 2) + 1;
-    var raindrops = createObject(randomX, randomY, 'img');
-    raindrops.src = "/images/lumberjack.jpg";
-    raindrops.name = "lumberjack";
-    raindrops.id = "lumberjack";
-    tree.appendChild(raindrops);
-};
-
 Template.Trees.events({
 
     'click .update'(event) {
-        var raindrop = document.getElementById("raindrop");
         event.preventDefault();
-        raindrop.className = "animate";
-        setTimeout(
-            function () {
-                raindrop.className = "";
-            }, 2000);
+        createRain();
+        setTimeout(function () {
+            var div = document.getElementById("rain");
+            div.innerHTML = "";
+        }, 1000);
+
+        // var raindrop = document.getElementById("raindrop");
+        // event.preventDefault();
+        // raindrop.className = "animate";
+        // setTimeout(
+        //     function () {
+        //         raindrop.className = "";
+        //     }, 2000);
 
 
         if (this.health >= 25) {
@@ -80,16 +90,16 @@ Template.Trees.events({
 
 Template.Trees.events({
 
-    //animatie voor vogel?
-    'click .update'(event) {
-        var flyby = document.getElementById("flyby");
-        event.preventDefault();
-        flyby.className = "animate1";
-        setTimeout(
-            function () {
-                flyby.className = "";
-            }, 3000);
-    }
+    // //animatie voor vogel?
+    // 'click .update'(event) {
+    //     var flyby = document.getElementById("flyby");
+    //     event.preventDefault();
+    //     flyby.className = "animate1";
+    //     setTimeout(
+    //         function () {
+    //             flyby.className = "";
+    //         }, 3000);
+    // }
 
 });
 
