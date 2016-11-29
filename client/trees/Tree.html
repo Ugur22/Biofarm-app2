@@ -1,8 +1,9 @@
 <template name="Tree">
     <section class="rain" id="rain"></section>
-    <img id="flyby" height="100px" src="/images/vogel.png" alt="">
+    <!--<img id="flyby" height="100px" src="/images/vogel.png" alt="">-->
     <article class="tree">`
         <div id="tree">
+            <span>Tree Health: {{health}}</span>
             <img id="imgTree" height="300px" src="/images/tree.black.png" alt="">
         </div>
         <button class="update" id="makeRain">Give Water</button>
@@ -11,6 +12,5 @@
                  aria-valuemin="0" aria-valuemax="100" style="width:{{health}}%">
             </div>
         </div>
-        <h4>Tree Health: {{health}}</h4>
     </article>
 </template>

@@ -1,4 +1,9 @@
 <template name="Trees">
+    <section class="worlds">
+        {{#each worlds}}
+            {{> World}}
+        {{/each}}
+    </section>
     <!--<h1>{{userData}}</h1>-->
     <section class="trees">
         {{#if Template.subscriptionsReady}}
@@ -8,10 +13,5 @@
         {{else}}
             <p>Loading</p>
         {{/if}}
-    </section>
-    <section class="worlds">
-        {{#each worlds}}
-            {{> World}}
-        {{/each}}
     </section>
 </template>

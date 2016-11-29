@@ -26,7 +26,7 @@ function randRange(minNum, maxNum) {
 function createRain() {
 
     for (var i = 1; i < nbDrop; i++) {
-        var dropLeft = randRange(500, 1100);
+        var dropLeft = randRange(0, 1600);
         var dropTop = randRange(-1000, 1400);
 
         $('.rain').append('<div class="drop" id="drop' + i + '"></div>');
@@ -68,9 +68,9 @@ Template.Trees.events({
         }, 1000);
         if (this.health >= 25) {
             document.getElementById("imgTree").src = "/images/tree.dead.png";
-            var flyby = document.getElementById("flyby");
+            // var flyby = document.getElementById("flyby");
             event.preventDefault();
-            flyby.className = "animate1";
+            // flyby.className = "animate1";
         }
 
         if (this.health >= 50) {
@@ -83,9 +83,9 @@ Template.Trees.events({
         }
 
         if (this.health >= 100) {
-            flyby = document.getElementById("flyby");
+            // flyby = document.getElementById("flyby");
             event.preventDefault();
-            flyby.className = "";
+            // flyby.className = "";
             document.getElementById("imgTree").src = "/images/tree.black.png";
             Trees.update(this._id, {
                 $set: {health: 0},
