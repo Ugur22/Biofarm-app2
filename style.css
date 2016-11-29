@@ -75,6 +75,10 @@ body {
     animation-iteration-count: infinite;
 }
 
+span {
+    color: white;
+}
+
 @keyframes flybyFly {
     0% {
         left: 0%;

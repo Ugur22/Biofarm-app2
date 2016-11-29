@@ -3,6 +3,7 @@ Template.Trees.onCreated(function () {
     self.autorun(function () {
         self.subscribe('trees');
         self.subscribe('userData');
+        self.subscribe('worlds');
     });
 });
 
@@ -41,11 +42,9 @@ Template.Trees.helpers({
     }
 });
 
-Template.NewTree.helpers({
-    treesCount: ()=> {
-        var treeAmount = Trees.find().count();
-
-        return treeAmount;
+Template.Trees.helpers({
+    worlds: ()=> {
+        return Worlds.find({});
     }
 });
 
@@ -98,15 +97,5 @@ Template.Trees.events({
         }
     },
 });
-
-Template.Trees.events({
-
-    //animatie voor vogel?
-    'click .update'(event) {
-
-    }
-
-});
-
 
 
