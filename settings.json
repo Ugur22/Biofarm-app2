@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "http://biofarm.meteorapp.com",
+      "MONGO_URL": "mongodb://biofarmAdmin:Redex11@ds119588.mlab.com:19588/biofarm_mongodb"
+    }
+  }
+}

@@ -3,7 +3,7 @@ Template.Trees.onCreated(function () {
     self.autorun(function () {
         self.subscribe('trees');
         self.subscribe('userData');
-        self.subscribe('worlds');
+        self.subscribe('worlds')
     });
 });
 
@@ -21,6 +21,14 @@ var nbDrop = 858;
 function randRange(minNum, maxNum) {
     return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
 }
+
+function timer() {
+    Trees.update(this._id, {
+        $set: {health: this.health + 10},
+    });
+    console.log('hello world');
+}
+
 
 // function to generate drops
 function createRain() {
@@ -59,7 +67,8 @@ Template.Trees.helpers({
 
 Template.Trees.events({
 
-    'click .update'(event) {
+    'click .update'(event)
+    {
         event.preventDefault();
         createRain();
         setTimeout(function () {
@@ -95,7 +104,9 @@ Template.Trees.events({
                 $set: {health: this.health + 10},
             });
         }
-    },
-});
+    }
+    ,
+})
+;
 
 
