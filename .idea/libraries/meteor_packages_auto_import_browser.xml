@@ -2,8 +2,6 @@
   <library name="meteor-packages-auto-import-browser" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$USER_HOME$/.meteor/packages/facebook/1.2.10/web.browser/facebook_client.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/facebook/1.2.10/web.browser/facebook_configure.js" />
         <item url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.7.0/web.browser/upstream/css/font-awesome.css" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.8/web.browser/heartbeat.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.8/web.browser/namespace.js" />
@@ -13,11 +11,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/babel-runtime/1.0.1/web.browser/babel-runtime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/caching-compiler.js" />
         <item url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/multi-file-caching-compiler.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/accounts-oauth/1.1.15/web.browser/oauth_client.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/accounts-oauth/1.1.15/web.browser/oauth_common.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/accounts-facebook/1.0.11/web.browser/facebook_login_button.css" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_collection2-core/1.2.0/web.browser/lib/collection2.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/accounts-facebook/1.0.11/web.browser/facebook.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/password_tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/password_client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_schema-deny/1.1.0/web.browser/lib/deny.js" />
@@ -249,13 +243,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/preamble.js" />
         <item url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/visitors.js" />
         <item url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/html.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/packages/oauth/end_of_redirect_response.js" />
         <item url="file://$USER_HOME$/.meteor/packages/meteortoys_allthings/3.0.0/web.browser/main.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/packages/oauth/end_of_popup_response.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/oauth_client.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/deprecated.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/oauth_browser.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/oauth_common.js" />
         <item url="file://$USER_HOME$/.meteor/packages/meteortoys_authenticate/3.0.0/web.browser/client/main.js" />
         <item url="file://$USER_HOME$/.meteor/packages/meteortoys_authenticate/3.0.0/web.browser/config/config.js" />
         <item url="file://$USER_HOME$/.meteor/packages/promise/0.8.8/web.browser/common.js" />
@@ -407,8 +395,6 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.meteor/packages/facebook/1.2.10/web.browser/facebook_client.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/facebook/1.2.10/web.browser/facebook_configure.js" />
       <root url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.7.0/web.browser/upstream/css/font-awesome.css" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.8/web.browser/heartbeat.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.8/web.browser/namespace.js" />
@@ -418,11 +404,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/babel-runtime/1.0.1/web.browser/babel-runtime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/caching-compiler.js" />
       <root url="file://$USER_HOME$/.meteor/packages/caching-compiler/1.1.9/web.browser/multi-file-caching-compiler.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/accounts-oauth/1.1.15/web.browser/oauth_client.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/accounts-oauth/1.1.15/web.browser/oauth_common.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/accounts-facebook/1.0.11/web.browser/facebook_login_button.css" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_collection2-core/1.2.0/web.browser/lib/collection2.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/accounts-facebook/1.0.11/web.browser/facebook.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/password_tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/password_client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_schema-deny/1.1.0/web.browser/lib/deny.js" />
@@ -654,13 +636,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/preamble.js" />
       <root url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/visitors.js" />
       <root url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.11/web.browser/html.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/packages/oauth/end_of_redirect_response.js" />
       <root url="file://$USER_HOME$/.meteor/packages/meteortoys_allthings/3.0.0/web.browser/main.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/packages/oauth/end_of_popup_response.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/oauth_client.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/deprecated.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/oauth_browser.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/oauth/1.1.12/web.browser/oauth_common.js" />
       <root url="file://$USER_HOME$/.meteor/packages/meteortoys_authenticate/3.0.0/web.browser/client/main.js" />
       <root url="file://$USER_HOME$/.meteor/packages/meteortoys_authenticate/3.0.0/web.browser/config/config.js" />
       <root url="file://$USER_HOME$/.meteor/packages/promise/0.8.8/web.browser/common.js" />
