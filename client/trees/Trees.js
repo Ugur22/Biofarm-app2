@@ -1,9 +1,11 @@
+import {ReactiveVar} from 'meteor/reactive-var';
 Template.Trees.onCreated(function () {
+    this.changeHealth = new ReactiveVar(0);
     var self = this;
     self.autorun(function () {
         self.subscribe('trees');
         self.subscribe('userData');
-        self.subscribe('worlds')
+        self.subscribe('worlds');
     });
 });
 
@@ -14,19 +16,12 @@ Template.NewTree.onCreated(function () {
     });
 });
 
-
 var nbDrop = 858;
+
 
 // function to generate a random number range.
 function randRange(minNum, maxNum) {
     return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
-}
-
-function timer() {
-    Trees.update(this._id, {
-        $set: {health: this.health + 10},
-    });
-    console.log('hello world');
 }
 
 
@@ -44,31 +39,57 @@ function createRain() {
 
 }
 
+
 Template.Trees.helpers({
     trees: ()=> {
         return Trees.find({});
-    }
-});
-
-Template.Trees.helpers({
+    },
     worlds: ()=> {
         return Worlds.find({});
-    }
-});
-
-
-Template.Trees.helpers({
+    },
     userData: ()=> {
         var user = Meteor.user();
         var email = user.emails[0].address;
         return email;
+    },
+
+    increaseHealth: ()=> {
+        return Template.instance().changeHealth.get();
+    },
+    healthTree: ()=> {
+        var tree = Trees.find({}, {fields: {health: 1}}).fetch();
+        var health = tree[0].health;
+        return health;
+    }
+});
+
+Template.NewTree.events({
+    'submit .new-Tree'(event){
+        event.preventDefault();
+        const health = 0;
+
+        Trees.insert({
+            health
+        });
+
+        const Air = 0;
+        const C02 = 0;
+
+        Worlds.insert({
+            Air,
+            C02
+        });
+        FlowRouter.go('trees');
     }
 });
 
 Template.Trees.events({
-
-    'click .update'(event)
+    'click .update'(event, template)
     {
+
+        Meteor.setInterval(function () {
+            template.changeHealth.set(template.changeHealth.get() + 10);
+        }, 1000);
         event.preventDefault();
         createRain();
         setTimeout(function () {
@@ -81,16 +102,12 @@ Template.Trees.events({
             event.preventDefault();
             // flyby.className = "animate1";
         }
-
         if (this.health >= 50) {
             document.getElementById("imgTree").src = "/images/tree.orange.png";
         }
-
-
         if (this.health >= 70) {
             document.getElementById("imgTree").src = "/images/tree.green.png";
         }
-
         if (this.health >= 100) {
             // flyby = document.getElementById("flyby");
             event.preventDefault();
@@ -100,13 +117,9 @@ Template.Trees.events({
                 $set: {health: 0},
             });
         } else {
-            Trees.update(this._id, {
-                $set: {health: this.health + 10},
-            });
+            Meteor.call('updateHealth', this._id, this.health);
         }
-    }
-    ,
-})
-;
+    },
+});
 
 

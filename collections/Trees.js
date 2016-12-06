@@ -37,4 +37,14 @@ TreeSchema = new SimpleSchema({
     }
 });
 
+Meteor.methods({
+    updateHealth: function (id, currentHealth) {
+        Trees.update(id, {
+            $set: {
+                health: currentHealth + 10
+            }
+        });
+    }
+});
+
 Trees.attachSchema(TreeSchema);

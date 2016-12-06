@@ -6,12 +6,5 @@ Template.Worlds.onCreated(function () {
 });
 
 
-Template.Worlds.helpers({
-    worlds: ()=> {
-        return Worlds.find({});
-    }
-});
-
-
 
 

@@ -1,10 +1,11 @@
 <template name="Trees">
+    <span>Tree Health: {{healthTree}}</span>
+    <span>{{increaseHealth}}</span>
     <section class="worlds">
         {{#each worlds}}
             {{> World}}
         {{/each}}
     </section>
-    <!--<h1>{{userData}}</h1>-->
     <section class="trees">
         {{#if Template.subscriptionsReady}}
             {{#each trees}}
