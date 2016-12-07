@@ -367,7 +367,6 @@ textarea.static-input {
 
 img#imgTree {
     height: 669px;
-    margin-left: 22%;
     margin-top: -146px;
     margin-bottom: -103px;
 
@@ -380,8 +379,8 @@ img#imgTree {
 .tree {
     padding: 0 20px 20px;
     margin-bottom: 20px;
-    margin: 0 auto;
-    position: absolute;
+    margin-top: -5%;
+    margin-left:16%;
     z-index: 1;
     width: 60%;
 }

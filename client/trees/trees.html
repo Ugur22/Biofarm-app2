@@ -1,10 +1,5 @@
 <template name="Trees">
     <span>Tree Health: {{healthTree}}</span>
-    <section class="worlds">
-        {{#each worlds}}
-            {{> World}}
-        {{/each}}
-    </section>
     <section class="trees">
         {{#if Template.subscriptionsReady}}
             {{#each trees}}
@@ -13,5 +8,10 @@
         {{else}}
             <p>Loading</p>
         {{/if}}
+    </section>
+    <section class="worlds">
+        {{#each worlds}}
+            {{> World}}
+        {{/each}}
     </section>
 </template>
