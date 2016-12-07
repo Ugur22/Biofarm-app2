@@ -19,6 +19,10 @@ WorldSchema = new SimpleSchema({
         type: Number,
         label: "Air"
     },
+    Sunlight: {
+        type: Number,
+        label: "Sunlight"
+    },
     owner: {
         type: String,
         label: "Owner",

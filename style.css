@@ -366,6 +366,10 @@ textarea.static-input {
     background: forestgreen;
 }
 
+img#imgTree {
+    height: 200px;
+}
+
 .autoform-remove-item-wrap {
     vertical-align: middle;
 }

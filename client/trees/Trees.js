@@ -1,6 +1,5 @@
 import {ReactiveVar} from 'meteor/reactive-var';
 Template.Trees.onCreated(function () {
-    this.changeHealth = new ReactiveVar(0);
     var self = this;
     self.autorun(function () {
         self.subscribe('trees');
@@ -53,9 +52,7 @@ Template.Trees.helpers({
         return email;
     },
 
-    increaseHealth: ()=> {
-        return Template.instance().changeHealth.get();
-    },
+
     healthTree: ()=> {
         var tree = Trees.find({}, {fields: {health: 1}}).fetch();
         var health = tree[0].health;
@@ -74,10 +71,12 @@ Template.NewTree.events({
 
         const Air = 0;
         const C02 = 0;
+        const Sunlight = 0;
 
         Worlds.insert({
             Air,
-            C02
+            C02,
+            Sunlight
         });
         FlowRouter.go('trees');
     }
@@ -86,10 +85,6 @@ Template.NewTree.events({
 Template.Trees.events({
     'click .update'(event, template)
     {
-
-        Meteor.setInterval(function () {
-            template.changeHealth.set(template.changeHealth.get() + 10);
-        }, 1000);
         event.preventDefault();
         createRain();
         setTimeout(function () {
@@ -97,22 +92,22 @@ Template.Trees.events({
             div.innerHTML = "";
         }, 1000);
         if (this.health >= 25) {
-            document.getElementById("imgTree").src = "/images/tree.dead.png";
+            document.getElementById("imgTree").src = "/images/tree.png";
             // var flyby = document.getElementById("flyby");
             event.preventDefault();
             // flyby.className = "animate1";
         }
         if (this.health >= 50) {
-            document.getElementById("imgTree").src = "/images/tree.orange.png";
+            document.getElementById("imgTree").src = "/images/Autumn.png";
         }
         if (this.health >= 70) {
-            document.getElementById("imgTree").src = "/images/tree.green.png";
+            document.getElementById("imgTree").src = "/images/Summer.png";
         }
         if (this.health >= 100) {
             // flyby = document.getElementById("flyby");
+            document.getElementById("imgTree").src = "/images/Winter.png";
             event.preventDefault();
             // flyby.className = "";
-            document.getElementById("imgTree").src = "/images/tree.black.png";
             Trees.update(this._id, {
                 $set: {health: 0},
             });
