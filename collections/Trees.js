@@ -41,7 +41,7 @@ Meteor.methods({
     updateHealth: function (id, currentHealth) {
         Trees.update(id, {
             $set: {
-                health: currentHealth + 10
+                health: currentHealth + 2
             }
         });
     }

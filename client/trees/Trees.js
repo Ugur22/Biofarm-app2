@@ -26,17 +26,48 @@ function randRange(minNum, maxNum) {
 
 // function to generate drops
 function createRain() {
-
     for (var i = 1; i < nbDrop; i++) {
         var dropLeft = randRange(0, 1600);
         var dropTop = randRange(-1000, 1400);
-
         $('.rain').append('<div class="drop" id="drop' + i + '"></div>');
         $('#drop' + i).css('left', dropLeft);
         $('#drop' + i).css('top', dropTop);
     }
-
 }
+
+
+Template.World.onCreated(function () {
+    var self = this;
+    var interval = Meteor.setInterval(function () {
+        countCo2.set(countCo2.get() + 1);
+        countAir.set(countAir.get() - 1);
+        countSunlight.set(countSunlight.get() - 1);
+        if (countCo2.get() >= 100 || countAir.get() <= 0 || countSunlight <= 0) {
+            Meteor.clearInterval(interval);
+        }
+    }, 1000);
+
+
+    self.autorun(function () {
+        self.subscribe('worlds');
+    });
+});
+var countCo2 = new ReactiveVar(0);
+var countAir = new ReactiveVar(100);
+var countSunlight = new ReactiveVar(100);
+
+
+Template.World.helpers({
+    counter: ()=> {
+        return countCo2.get();
+    },
+    counterAir: ()=> {
+        return countAir.get();
+    },
+    counterSunlight: ()=> {
+        return countSunlight.get();
+    },
+});
 
 
 Template.Trees.helpers({
@@ -85,6 +116,8 @@ Template.NewTree.events({
 Template.Trees.events({
     'click .update'(event, template)
     {
+        countAir.set(countAir.get() + 3);
+        countCo2.set(countCo2.get() - 3);
         event.preventDefault();
         createRain();
         setTimeout(function () {
@@ -102,6 +135,7 @@ Template.Trees.events({
         }
         if (this.health >= 70) {
             document.getElementById("imgTree").src = "/images/Summer.png";
+
         }
         if (this.health >= 100) {
             // flyby = document.getElementById("flyby");

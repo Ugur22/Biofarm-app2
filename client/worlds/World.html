@@ -1,20 +1,20 @@
 <template name="World">
-    <span>Quality Oxygen:</span>
+    <span>Quality Oxygen: {{counterAir}}</span>
     <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="70"
-             aria-valuemin="0" aria-valuemax="100" style="width:{{Air}}%">
+             aria-valuemin="0" aria-valuemax="100" style="width:{{counterAir}}%">
         </div>
     </div>
-    <span>Amount of CO2:</span>
+    <span>Amount of CO2:{{counter}}</span>
     <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="70"
-             aria-valuemin="0" aria-valuemax="100" style="width:{{C02}}%">
+             aria-valuemin="0" aria-valuemax="100" style="width:{{counter}}%">
         </div>
     </div>
-    <span>Amount of sunlight:</span>
+    <span>Amount of sunlight:{{counterSunlight}}</span>
     <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="70"
-             aria-valuemin="0" aria-valuemax="100" style="width:{{Sunlight}}%">
+             aria-valuemin="0" aria-valuemax="100" style="width:{{counterSunlight}}%">
         </div>
     </div>
 </template>

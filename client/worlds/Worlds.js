@@ -7,4 +7,3 @@ Template.Worlds.onCreated(function () {
 
 
 
-
