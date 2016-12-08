@@ -357,6 +357,14 @@ textarea.static-input {
     padding: 0;
 }
 
+#C02Level {
+    background: green;
+}
+
+#sunLight {
+    background-color: yellow;
+}
+
 .autoform-add-item.btn {
     width: 100%;
     border-radius: 0;
@@ -380,7 +388,7 @@ img#imgTree {
     padding: 0 20px 20px;
     margin-bottom: 20px;
     margin-top: -5%;
-    margin-left:16%;
+    margin-left: 16%;
     z-index: 1;
     width: 60%;
 }
@@ -442,5 +450,5 @@ img#imgTree {
 }
 
 /*.progress {*/
-    /*height: 25px !important;*/
+/*height: 25px !important;*/
 /*}*/
