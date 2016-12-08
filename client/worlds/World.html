@@ -1,20 +1,22 @@
 <template name="World">
-    <span>Quality Oxygen: {{counterAir}}</span>
-    <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="70"
-             aria-valuemin="0" aria-valuemax="100" style="width:{{counterAir}}%">
+    <div class="worlds">
+        <span>Quality Oxygen: {{counterAir}}</span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{counterAir}}%">
+            </div>
         </div>
-    </div>
-    <span>Amount of CO2:{{counter}}</span>
-    <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="70" id="C02Level"
-             aria-valuemin="0" aria-valuemax="100" style="width:{{counter}}%">
+        <span>Amount of CO2:{{counter}}</span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{counter}}%">
+            </div>
         </div>
-    </div>
-    <span>Amount of sunlight:{{counterSunlight}}</span>
-    <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="70" id="sunLight"
-             aria-valuemin="0" aria-valuemax="100" style="width:{{counterSunlight}}%">
+        <span>Amount of sunlight:{{counterSunlight}}</span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{counterSunlight}}%">
+            </div>
         </div>
     </div>
 </template>
