@@ -4,7 +4,9 @@ html {
 
 body {
     background-image: url("/images/Background.jpg");
-    overflow: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .drop {
@@ -48,11 +50,15 @@ body {
     }
 
 }
-
+.close-info {
+    background-color: #2ecc71;
+    opacity: 0.75;
+    text-align: center;
+}
 #info-button {
     width: 7%;
-    margin-top: 1%;
-    font-size: 42%;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .hide {
@@ -467,3 +473,5 @@ img#imgTree {
 /*.progress {*/
 /*height: 25px !important;*/
 /*}*/
+
+
