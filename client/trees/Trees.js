@@ -125,13 +125,13 @@ Template.Trees.events({
             div.innerHTML = "";
         }, 1000);
         if (this.health >= 25) {
-            document.getElementById("imgTree").src = "/images/tree.png";
+            document.getElementById("imgTree").src = "/images/Winter.png";
             // var flyby = document.getElementById("flyby");
             event.preventDefault();
             // flyby.className = "animate1";
         }
         if (this.health >= 50) {
-              document.getElementById("imgTree").src = "/images/Autumn.png";
+            document.getElementById("imgTree").src = "/images/Autumn.png";
         }
         if (this.health >= 70) {
             document.getElementById("imgTree").src = "/images/Summer.png";
@@ -139,7 +139,7 @@ Template.Trees.events({
         }
         if (this.health >= 100) {
             // flyby = document.getElementById("flyby");
-            document.getElementById("imgTree").src = "/images/Winter.png";
+            document.getElementById("imgTree").src = "/images/tree.png";
             event.preventDefault();
             // flyby.className = "";
             Trees.update(this._id, {

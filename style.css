@@ -50,7 +50,9 @@ body {
 }
 
 #info-button {
-    width: 100px;
+    width: 7%;
+    margin-top: 1%;
+    font-size: 42%;
 }
 
 .hide {
@@ -391,10 +393,7 @@ div.worlds div:nth-child(6) > .progress-bar {
 }
 
 img#imgTree {
-    height: 669px;
-    margin-top: -146px;
-    margin-bottom: -103px;
-
+    height: 100%;
 }
 
 .autoform-remove-item-wrap {
@@ -404,8 +403,7 @@ img#imgTree {
 .tree {
     padding: 0 20px 20px;
     margin-bottom: 20px;
-    margin-top: -5%;
-    margin-left: 16%;
+    margin-left: 10%;
     z-index: 1;
     width: 60%;
 }

@@ -1,4 +1,4 @@
-Template.Header.events({
+Template.Info.events({
     'submit .close-info'(event){
         event.preventDefault();
         if ($(".billboard").hasClass('hide')) {
