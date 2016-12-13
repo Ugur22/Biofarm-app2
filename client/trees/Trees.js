@@ -85,9 +85,9 @@ Template.Trees.helpers({
 
 
     healthTree: ()=> {
-        // var tree = Trees.find({}, {fields: {health: 1}}).fetch();
-        // var health = tree[0].health;
-        // return health;
+        var tree = Trees.find({}, {fields: {health: 1}}).fetch();
+        var health = tree[0].health;
+        return health;
     }
 });
 
