@@ -42,7 +42,7 @@ Template.World.onCreated(function () {
         countCo2.set(countCo2.get() + 1);
         countAir.set(countAir.get() - 1);
         countSunlight.set(countSunlight.get() - 1);
-        if (countCo2.get() >= 100 || countAir.get() <= 0 || countAir.get() <= 0) {
+        if (countCo2.get() >= 100 || countAir.get() <= 0 || countAir.get() <= 0 || countSunlight.get() <= 0) {
             Meteor.clearInterval(interval);
         }
     }, 1000);
