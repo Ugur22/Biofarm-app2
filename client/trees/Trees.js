@@ -85,9 +85,9 @@ Template.Trees.helpers({
 
 
     healthTree: ()=> {
-        var tree = Trees.find({}, {fields: {health: 1}}).fetch();
-        var health = tree[0].health;
-        return health;
+        // var tree = Trees.find({}, {fields: {health: 1}}).fetch();
+        // var health = tree[0].health;
+        // return health;
     }
 });
 
@@ -131,7 +131,7 @@ Template.Trees.events({
             // flyby.className = "animate1";
         }
         if (this.health >= 50) {
-            document.getElementById("imgTree").src = "/images/Autumn.png";
+              document.getElementById("imgTree").src = "/images/Autumn.png";
         }
         if (this.health >= 70) {
             document.getElementById("imgTree").src = "/images/Summer.png";

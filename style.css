@@ -42,6 +42,23 @@ body {
     img#imgTree {
         width: 100%;
     }
+
+    .billboard {
+        display: none;
+    }
+
+}
+
+#info-button {
+    width: 100px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 /*Waterdruppel in de GIVE WATER animatie */
@@ -364,7 +381,6 @@ div.worlds div:nth-child(4) > .progress-bar {
 div.worlds div:nth-child(6) > .progress-bar {
     background-color: yellow;
 }
-
 
 .autoform-add-item.btn {
     width: 100%;
