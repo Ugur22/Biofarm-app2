@@ -3,10 +3,13 @@ html {
 }
 
 body {
-    background-image: url("/images/Background.jpg");
+    background-color: #00A1E5;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+#imageTree {
+    background-color: #00A1E5;
 }
 
 .drop {
@@ -119,7 +122,7 @@ span {
 }
 
 body {
-    padding: 70px 0 150px;
+    padding: 70px 0 32px;
 }
 
 a#addTree {
@@ -407,11 +410,11 @@ img#imgTree {
 }
 
 .tree {
-    padding: 0 20px 20px;
-    margin-bottom: 20px;
-    margin-left: 10%;
     z-index: 1;
     width: 60%;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin-left: -21%
 }
 
 .tree .btn-primary,
@@ -443,6 +446,18 @@ img#imgTree {
 .tree button .btn-primary {
     display: block;
 }
+
+.worlds {
+    width: 57%;
+    float: right;
+    margin-top: -21%;
+}
+
+#procesWater {
+    width: 46%;
+    margin-top: -8%;
+}
+
 
 /*Video van de home screen*/
 #bgvid {
