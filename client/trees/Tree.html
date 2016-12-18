@@ -3,18 +3,18 @@
     <!--<img id="flyby" height="100px" src="/images/vogel.png" alt="">-->
     <article class="tree">`
         <div id="imageTree">
-        <div id="tree">
-            <img id="imgTree" src="/images/Winter.png" alt="">
-        </div>
-     </div>
-        <div id="procesWater">
-        <button class="update" id="makeRain">Give Water</button>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                 aria-valuemin="0" aria-valuemax="100" style="width:{{health}}%">
+            <div id="tree">
+                <img id="imgTree" src="/images/Winter.png" alt="">
             </div>
         </div>
+        <div id="procesWater">
+            <button class="update" id="makeRain">Give Water</button>
+            <span>Tree Health: {{healthTree}}</span>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                     aria-valuemin="0" aria-valuemax="100" style="width:{{health}}%">
+                </div>
+            </div>
         </div>
     </article>
-
 </template>

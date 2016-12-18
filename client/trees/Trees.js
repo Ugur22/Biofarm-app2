@@ -82,8 +82,9 @@ Template.Trees.helpers({
         var email = user.emails[0].address;
         return email;
     },
+});
 
-
+Template.Tree.helpers({
     healthTree: ()=> {
         var tree = Trees.find({}, {fields: {health: 1}}).fetch();
         var health = tree[0].health;
@@ -135,6 +136,7 @@ Template.Trees.events({
         }
         if (this.health >= 70) {
             document.getElementById("imgTree").src = "/images/Summer.png";
+            Meteor.call('sup');
 
         }
         if (this.health >= 100) {
