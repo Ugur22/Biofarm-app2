@@ -55,7 +55,7 @@ body {
 }
 .close-info {
     background-color: #2ecc71;
-    opacity: 0.75;
+    opacity: 0.85;
     text-align: center;
 }
 #info-button {
@@ -185,7 +185,7 @@ p {
     font-size: 2em;
     text-align: center;
     padding: 60px;
-    opacity: 0.75;
+    opacity: 0.85;
 }
 
 .billboard h2 {
@@ -414,7 +414,8 @@ img#imgTree {
     width: 60%;
     margin-bottom: 0 !important;
     padding: 0 !important;
-    margin-left: -21%
+    margin-left: -21%;
+    margin-top: -13%;
 }
 
 .tree .btn-primary,

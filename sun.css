@@ -4,8 +4,7 @@
 
 /* the svg element */
 .svg-sun {
-    width: 100px;
-    height: 100px;
+    height: 145px;
     float: right;
 
     -webkit-transform-origin: center center;
