@@ -6,7 +6,6 @@
         <div class="cloud x3"></div>
         <div class="cloud x4"></div>
         <div class="cloud x5"></div>
-
     </div>
 
     <section class="rain" id="rain"></section>
@@ -17,14 +16,15 @@
                 <img id="imgTree" src="/images/Winter.png" alt="">
             </div>
         </div>
-        <div id="procesWater">
-            <button class="update" id="makeRain">Give Water</button>
-            <span>Tree Health: {{healthTree}}</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                     aria-valuemin="0" aria-valuemax="100" style="width:{{health}}%">
-                </div>
+
+    </article>
+    <div id="procesWater">
+        <input type="image" src="/images/water.png" class="update" id="makeRain">
+        <span>Tree Health: {{healthTree}}</span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{health}}%">
             </div>
         </div>
-    </article>
+    </div>
 </template>

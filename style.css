@@ -456,7 +456,8 @@ img#imgTree {
 
 #procesWater {
     width: 46%;
-    margin-top: -8%;
+    margin-top: -3%;
+    margin-left: -12%;
 }
 
 
@@ -484,6 +485,17 @@ img#imgTree {
     text-align: center;
     padding: 0px !important;
 
+}
+
+/*water */
+.update {
+    background: transparent !important;
+    border-radius: 0px !important;
+    border: 0 !important;
+    width: 23%;
+    margin-top: -92%;
+    margin-left: -34%;
+    float: left;
 }
 
 /*.progress {*/
