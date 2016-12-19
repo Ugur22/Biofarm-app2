@@ -138,7 +138,7 @@ body h4 {
 
 body img#raindrop {
     width: 20px;
-    margin-left: 150px;
+    margin-left: 100px;
     margin-top: 10px;
     height: 20px;
     Position: relative;
@@ -492,11 +492,36 @@ img#imgTree {
     background: transparent !important;
     border-radius: 0px !important;
     border: 0 !important;
-    width: 23%;
-    margin-top: -92%;
-    margin-left: -34%;
+    width: 18%;
+    margin-top: -74%;
+    margin-left: -27%;
     float: left;
 }
+
+.updateSun {
+    background: transparent !important;
+    border-radius: 0px !important;
+    border: 0 !important;
+    width: 18%;
+    margin-top: -53%;
+    margin-left: -27%;
+    float: left;
+}
+
+.updateo2 {
+    background: transparent !important;
+    border-radius: 0px !important;
+    border: 0 !important;
+    width: 18%;
+    margin-top: -32%;
+    margin-left: -27%;
+    float: left;
+}
+
+#tree{
+    margin-left: 18%;
+}
+
 
 /*.progress {*/
 /*height: 25px !important;*/
