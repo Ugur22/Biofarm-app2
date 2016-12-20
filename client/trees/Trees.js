@@ -41,7 +41,9 @@ function createRain() {
 Template.World.onCreated(function () {
     var self = this;
     var IntervalOxygen = Meteor.setInterval(function () {
-        Meteor.call('getCo2', function (err, res) {
+
+// Sensor Sander, Oxygen
+        Meteor.call('getOxygen', function (err, res) {
             if (err) {
                 console.log(err);
             } else {
@@ -70,13 +72,13 @@ Template.World.onCreated(function () {
 
     }, 100);
 
-    var interval = Meteor.setInterval(function () {
-        countCo2.set(countCo2.get() + 1);
-        countSunlight.set(countSunlight.get() - 1);
-        if (countCo2.get() >= 100 || countSunlight.get() <= 0) {
-            Meteor.clearInterval(interval);
-        }
-    }, 1000);
+    // var interval = Meteor.setInterval(function () {
+    //     countCo2.set(countCo2.get() + 1);
+    //     countSunlight.set(countSunlight.get() - 1);
+    //     if (countCo2.get() >= 100 || countSunlight.get() <= 0) {
+    //         Meteor.clearInterval(interval);
+    //     }
+    // }, 1000);
 
 
     self.autorun(function () {
@@ -102,7 +104,7 @@ Template.World.helpers({
     },
 
     get02: () => {
-        Meteor.call('getCo2', function (err, res) {
+        Meteor.call('getOxygen', function (err, res) {
             if (err) {
                 console.log(err);
             } else {

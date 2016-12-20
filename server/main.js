@@ -1,6 +1,6 @@
 var five = Meteor.npmRequire("johnny-five");
 var board = new five.Board();
-var co2 = 0;
+var oxygen = 0;
 
 //Sensor Sander, Light
 var light = 0;
@@ -8,9 +8,9 @@ var light = 0;
 //Sensor Erhan, Moisture
 var moisture = 0;
 
-function getCo2() {
-    console.log(co2);
-    return co2;
+function getOxygen() {
+    console.log(oxygen);
+    return oxygen;
 }
 
 //Sensor Erhan, Moisture
@@ -38,7 +38,7 @@ function setUp() {
     var sensor2 = new five.Sensor ("A2");
 
     sensor.scale([0, 100]).on("data", function () {
-        co2 = Math.floor(this.scaled);
+        oxygen = Math.floor(this.scaled);
     });
 // Sensor Erhan, Moisture
     sensor1.scale([0, 100]).on("data", function () {
@@ -58,9 +58,9 @@ board.on("ready", function () {
 
 
 Meteor.methods({
-    getCo2: function () {
-        console.log(co2);
-        return co2;
+    getOxygen: function () {
+        console.log(oxygen);
+        return oxygen;
     },
 
 // Sensor Erhan, Moisture
