@@ -54,7 +54,15 @@ Template.World.onCreated(function () {
             if (err) {
                 console.log(err);
             } else {
-                hp1.set(res);
+                moisture.set(res);
+            }
+        });
+
+        Meteor.call('getLight', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                light.set(res);
             }
         });
 
@@ -80,7 +88,9 @@ var countSunlight = new ReactiveVar(100);
 var oxygen = new ReactiveVar(0);
 
 // Sensor Erhan, Moisture
-var hp1 = new ReactiveVar(0);
+var moisture = new ReactiveVar(0);
+// Sensor Sander, Light
+var light = new ReactiveVar(0);
 
 
 Template.World.helpers({
@@ -109,12 +119,26 @@ Template.World.helpers({
             if (err) {
                 console.log(err);
             } else {
-                hp1.set(res);
+                moisture.set(res);
                 console.log(res);
             }
         });
 
-        return hp1.get();
+        return moisture.get();
+    },
+
+//Sensor Sander, Light
+    get04: () => {
+        Meteor.call('getLight', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                light.set(res);
+                console.log(res);
+            }
+        });
+
+        return light.get();
     }
 
 });
