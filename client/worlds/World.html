@@ -1,10 +1,10 @@
 <template name="World">
     <div class="worlds">
 
-        <span>Quality Oxygen: {{counterAir}}</span>
+        <span>Quality Oxygen: {{get02}}</span>
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                 aria-valuemin="0" aria-valuemax="100" style="width:{{counterAir}}%">
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{get02}}%">
             </div>
         </div>
         <span>Amount of CO2:{{counter}}</span>
@@ -14,6 +14,7 @@
             </div>
         </div>
         <span>Amount of sunlight:{{counterSunlight}}</span>
+        <!--<h1>GET Oxygen:{{get02}}</h1>-->
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="70"
                  aria-valuemin="0" aria-valuemax="100" style="width:{{counterSunlight}}%">

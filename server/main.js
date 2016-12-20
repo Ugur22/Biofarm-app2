@@ -1,22 +1,30 @@
 var five = Meteor.npmRequire("johnny-five");
 var board = new five.Board();
+var co2 = 0;
 
-var led = null;
-var isOn = false;
+function getCo2() {
+    console.log(co2);
+    return co2;
+}
 
-board.on("ready", function() {
-  console.log("BOARD CONNECTED.");
+function setUp() {
+    var sensor = new five.Sensor("A0");
 
-  led = new five.Led(13);
+    sensor.scale([0, 100]).on("data", function () {
+        co2 = Math.floor(this.scaled);
+    });
+}
+
+board.on("ready", function () {
+    console.log("BOARD CONNECTED.");
+    setUp();
 });
 
+
 Meteor.methods({
-  sup: function () {
-    if (isOn) {
-      led.off()
-    } else {
-      led.on()
+    getCo2: function () {
+        console.log(co2);
+        return co2;
     }
-    isOn = !isOn
-  }
-})
+
+});

@@ -38,11 +38,20 @@ function createRain() {
 
 Template.World.onCreated(function () {
     var self = this;
+    var IntervalOxygen = Meteor.setInterval(function () {
+        Meteor.call('getCo2', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                oxygen.set(res);
+            }
+        });
+    }, 100);
+
     var interval = Meteor.setInterval(function () {
         countCo2.set(countCo2.get() + 1);
-        countAir.set(countAir.get() - 1);
         countSunlight.set(countSunlight.get() - 1);
-        if (countCo2.get() >= 100 || countAir.get() <= 0 || countAir.get() <= 0 || countSunlight.get() <= 0) {
+        if (countCo2.get() >= 100 || countSunlight.get() <= 0) {
             Meteor.clearInterval(interval);
         }
     }, 1000);
@@ -53,20 +62,29 @@ Template.World.onCreated(function () {
     });
 });
 var countCo2 = new ReactiveVar(0);
-var countAir = new ReactiveVar(100);
 var countSunlight = new ReactiveVar(100);
+var oxygen = new ReactiveVar(0);
 
 
 Template.World.helpers({
     counter: ()=> {
         return countCo2.get();
     },
-    counterAir: ()=> {
-        return countAir.get();
-    },
     counterSunlight: ()=> {
         return countSunlight.get();
     },
+
+    get02: () => {
+        Meteor.call('getCo2', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                oxygen.set(res);
+            }
+        });
+
+        return oxygen.get();
+    }
 });
 
 
@@ -117,7 +135,6 @@ Template.NewTree.events({
 Template.Trees.events({
     'click .update'(event, template)
     {
-        countAir.set(countAir.get() + 3);
         countCo2.set(countCo2.get() - 3);
         event.preventDefault();
         createRain();
@@ -136,8 +153,6 @@ Template.Trees.events({
         }
         if (this.health >= 70) {
             document.getElementById("imgTree").src = "/images/Summer.png";
-            Meteor.call('sup');
-
         }
         if (this.health >= 100) {
             // flyby = document.getElementById("flyby");
