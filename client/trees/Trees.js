@@ -68,6 +68,13 @@ Template.World.onCreated(function () {
             }
         });
 
+        Meteor.call('getC02', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                Co2.set(res);
+            }
+        });
 
 
     }, 100);
@@ -85,8 +92,7 @@ Template.World.onCreated(function () {
         self.subscribe('worlds');
     });
 });
-var countCo2 = new ReactiveVar(0);
-var countSunlight = new ReactiveVar(100);
+var Co2 = new ReactiveVar(0);
 var oxygen = new ReactiveVar(0);
 
 // Sensor Erhan, Moisture
@@ -96,11 +102,16 @@ var light = new ReactiveVar(0);
 
 
 Template.World.helpers({
-    counter: ()=> {
-        return countCo2.get();
-    },
-    counterSunlight: ()=> {
-        return countSunlight.get();
+    counterC02: ()=> {
+        Meteor.call('getC02', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                Co2.set(res);
+            }
+        });
+
+        return Co2.get();
     },
 
     get02: () => {
@@ -193,7 +204,6 @@ Template.NewTree.events({
 Template.Trees.events({
     'click .update'(event, template)
     {
-        countCo2.set(countCo2.get() - 3);
         event.preventDefault();
         createRain();
         setTimeout(function () {
