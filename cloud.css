@@ -68,6 +68,20 @@
     -o-animation: moveclouds 20s linear infinite;
 }
 
+@media screen and (max-width: 768px) {
+    .x3 {
+        top: -92%;
+    }
+
+    .x4 {
+        top: -45%;
+    }
+
+    #clouds {
+        margin-top: 7%;
+    }
+}
+
 .x4 {
     left: 470px; top: -169px;
 

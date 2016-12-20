@@ -53,6 +53,7 @@ body {
     }
 
 }
+
 .close-info {
     background-color: #2ecc71;
     opacity: 0.85;
@@ -60,8 +61,8 @@ body {
 }
 #info-button {
     width: 7%;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
 }
 
 .hide {
@@ -456,7 +457,7 @@ img#imgTree {
 
 #procesWater {
     width: 46%;
-    margin-top: -3%;
+    margin-top: -8%;
     margin-left: -12%;
 }
 
@@ -522,9 +523,84 @@ img#imgTree {
     margin-left: 18%;
 }
 
+@media screen and (max-width: 1024px) {
 
-/*.progress {*/
-/*height: 25px !important;*/
-/*}*/
+    .update{
+        width: 31%;
+        margin-top: -142%;
+        margin-left: -27%;
+    }
+
+    .updateSun {
+        width: 31%;
+        margin-top: -110%;
+        margin-left: -27%;
+    }
+
+    .updateo2 {
+        width: 31%;
+        margin-top: -81%;
+        margin-left: -27%;
+    }
+
+    #info-button {
+        width: 10%;
+    }
+
+    .worlds {
+        margin-top: -30%;
+    }
+
+    .tree{
+        margin-top: -33%;
+    }
+
+    #procesWater {
+        margin-top: -15%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .update{
+        width: 31%;
+        margin-top: -142%;
+        margin-left: -0%;
+    }
+
+    .updateSun {
+        width: 31%;
+        margin-top: -100%;
+        margin-left: -0%;
+    }
+
+    .updateo2 {
+        width: 31%;
+        margin-top: -61%;
+        margin-left: -0%;
+    }
+
+    #info-button {
+        width: 12%;
+    }
+
+    .worlds {
+        margin-top: -42%;
+    }
+
+    .tree{
+        margin-top: -33%;
+    }
+
+    #procesWater {
+        margin-top: -15%;
+    }
+
+    #tree {
+    margin-top: 39%;
+
+    }
+}
 
 
