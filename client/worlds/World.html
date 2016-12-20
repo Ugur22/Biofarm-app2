@@ -1,6 +1,12 @@
 <template name="World">
     <div class="worlds">
-
+        <!--Erhan Code voor moisture div-->
+        <span> Moisture: {{get03}}</span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{get02}}%">
+            </div>
+        </div>
         <span>Quality Oxygen: {{get02}}</span>
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="70"

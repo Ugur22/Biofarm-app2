@@ -48,6 +48,18 @@ Template.World.onCreated(function () {
                 oxygen.set(res);
             }
         });
+
+//Sensor Erhan, Moisture
+        Meteor.call('getMoisture', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                hp1.set(res);
+            }
+        });
+
+
+
     }, 100);
 
     var interval = Meteor.setInterval(function () {
@@ -66,6 +78,9 @@ Template.World.onCreated(function () {
 var countCo2 = new ReactiveVar(0);
 var countSunlight = new ReactiveVar(100);
 var oxygen = new ReactiveVar(0);
+
+// Sensor Erhan, Moisture
+var hp1 = new ReactiveVar(0);
 
 
 Template.World.helpers({
@@ -86,7 +101,22 @@ Template.World.helpers({
         });
 
         return oxygen.get();
+    },
+
+//Sensor Erhan, Moisture
+    get03: () => {
+        Meteor.call('getMoisture', function (err, res) {
+            if (err) {
+                console.log(err);
+            } else {
+                hp1.set(res);
+                console.log(res);
+            }
+        });
+
+        return hp1.get();
     }
+
 });
 
 
