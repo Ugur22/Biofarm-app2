@@ -27,12 +27,13 @@ function getLight() {
 }
 
 function getC02() {
-    console.log(C02);
     return C02;
 }
 
 
 function setUp() {
+    var power = new five.Pin("6");
+
     var sensor = new five.Sensor("A0");
 
 // Sensor Erhan, Moisture
@@ -49,7 +50,9 @@ function setUp() {
     });
 // Sensor Erhan, Moisture
     sensor1.scale([0, 100]).on("data", function () {
+
         moisture = Math.floor(this.scaled);
+        console.log(moisture);
     });
 // Sensor Sander, Light
     sensor2.scale([-100, 0]).on("data", function () {
@@ -72,23 +75,20 @@ board.on("ready", function () {
 
 Meteor.methods({
     getOxygen: function () {
-        console.log(oxygen);
         return oxygen;
     },
 
 // Sensor Erhan, Moisture
     getMoisture: function () {
-        console.log(moisture);
         return moisture;
     },
 
     getLight: function () {
-        console.log(light);
         return light;
     },
 
     getC02: function () {
-        console.log(C02);
+        // console.log(C02);
         return C02;
     }
 

@@ -72,22 +72,13 @@ Template.World.onCreated(function () {
             if (err) {
                 console.log(err);
             } else {
+                console.log(res);
                 Co2.set(res);
             }
         });
 
 
     }, 100);
-
-    // var interval = Meteor.setInterval(function () {
-    //     countCo2.set(countCo2.get() + 1);
-    //     countSunlight.set(countSunlight.get() - 1);
-    //     if (countCo2.get() >= 100 || countSunlight.get() <= 0) {
-    //         Meteor.clearInterval(interval);
-    //     }
-    // }, 1000);
-
-
     self.autorun(function () {
         self.subscribe('worlds');
     });
@@ -133,7 +124,6 @@ Template.World.helpers({
                 console.log(err);
             } else {
                 moisture.set(res);
-                console.log(res);
             }
         });
 
@@ -147,7 +137,6 @@ Template.World.helpers({
                 console.log(err);
             } else {
                 light.set(res);
-                console.log(res);
             }
         });
 
