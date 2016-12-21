@@ -49,7 +49,7 @@ function setUp() {
         oxygen = Math.floor(this.scaled);
     });
 // Sensor Erhan, Moisture
-    sensor1.scale([0, 100]).on("data", function () {
+    sensor1.scale([0, 255]).on("data", function () {
 
         moisture = Math.floor(this.scaled);
     });
