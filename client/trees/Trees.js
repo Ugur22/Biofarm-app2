@@ -68,14 +68,21 @@ Template.World.onCreated(function () {
             }
         });
 
-        Meteor.call('getC02', function (err, res) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(res);
-                Co2.set(res);
-            }
-        });
+        if (oxygen.get() < 44   ) {
+            Co2.set(80);
+        } else {
+            Co2.set(30);
+        }
+
+
+        // Meteor.call('getC02', function (err, res) {
+        //     if (err) {
+        //         console.log(err);
+        //     } else {
+        //         console.log(res);
+        //         Co2.set(res);
+        //     }
+        // });
 
 
     }, 100);
@@ -94,14 +101,13 @@ var light = new ReactiveVar(0);
 
 Template.World.helpers({
     counterC02: ()=> {
-        Meteor.call('getC02', function (err, res) {
-            if (err) {
-                console.log(err);
-            } else {
-                Co2.set(res);
-            }
-        });
-
+        // Meteor.call('getC02', function (err, res) {
+        //     if (err) {
+        //         console.log(err);
+        //     } else {
+        //         Co2.set(res);
+        //     }
+        // });
         return Co2.get();
     },
 

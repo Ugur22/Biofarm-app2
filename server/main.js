@@ -52,7 +52,6 @@ function setUp() {
     sensor1.scale([0, 100]).on("data", function () {
 
         moisture = Math.floor(this.scaled);
-        console.log(moisture);
     });
 // Sensor Sander, Light
     sensor2.scale([-100, 0]).on("data", function () {
