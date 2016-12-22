@@ -16,7 +16,7 @@ function getOxygen() {
 
 //Sensor Erhan, Moisture
 function getMoisture() {
-    // console.log(moisture);
+    console.log(moisture);
     return moisture;
 }
 
@@ -50,7 +50,6 @@ function setUp() {
     });
 // Sensor Erhan, Moisture
     sensor1.scale([0, 255]).on("data", function () {
-
         moisture = Math.floor(this.scaled);
     });
 // Sensor Sander, Light
@@ -60,8 +59,9 @@ function setUp() {
     })
 
     // sensor for C02
-    sensor3.scale([0, 100]).on("data", function () {
-        C02 = Math.floor(this.scaled);
+    sensor3.on("change", function (value) {
+        C02 = Math.floor(this.value);
+        // console.log(C02)
 
     })
 }
@@ -87,7 +87,6 @@ Meteor.methods({
     },
 
     getC02: function () {
-        // console.log(C02);
         return C02;
     }
 
