@@ -68,7 +68,7 @@ Template.World.onCreated(function () {
             }
         });
 
-        if (oxygen.get() < 44   ) {
+        if (oxygen.get() < 45   ) {
             Co2.set(80);
         } else {
             Co2.set(30);
