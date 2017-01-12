@@ -69,7 +69,7 @@ Template.World.onCreated(function () {
         });
 
         if (oxygen.get() < 45   ) {
-            Co2.set(80);
+            Co2.set(oxygen.get()  / 2);
         } else {
             Co2.set(30);
         }
@@ -197,9 +197,16 @@ Template.NewTree.events({
 });
 
 Template.Trees.events({
-    'click .update'(event, template)
+    'click .update'(event)
     {
         event.preventDefault();
+
+        Meteor.call('giveWater', function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+
         createRain();
         setTimeout(function () {
             var div = document.getElementById("rain");

@@ -34,6 +34,7 @@ function getC02() {
 function setUp() {
     var power = new five.Pin("6");
 
+
     var sensor = new five.Sensor("A0");
 
 // Sensor Erhan, Moisture
@@ -68,13 +69,24 @@ function setUp() {
 
 board.on("ready", function () {
     console.log("BOARD CONNECTED.");
+    // let  led = new five.Led(12);
+    // led.on();
     setUp();
+
 });
 
 
 Meteor.methods({
     getOxygen: function () {
         return oxygen;
+    },
+    giveWater: function () {
+        let  motor = new five.Led(12);
+        motor.on();
+
+        Meteor.setTimeout(function () {
+            motor.off();
+        },1000)
     },
 
 // Sensor Erhan, Moisture
