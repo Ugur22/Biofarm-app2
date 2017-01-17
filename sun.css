@@ -134,3 +134,9 @@
         transform: rotate(360deg);
     }
 }
+
+@media only screen and (max-width: 420px){
+    .svg-sun{
+        height: 99px;
+    }
+}
