@@ -40,16 +40,28 @@ function createRain() {
 
 Template.World.onCreated(function () {
     var self = this;
-    var IntervalOxygen = Meteor.setInterval(function () {
 
-// Sensor Sander, Oxygen
-        Meteor.call('getOxygen', function (err, res) {
-            if (err) {
-                console.log(err);
-            } else {
-                oxygen.set(res);
-            }
-        });
+    var IntervalOxygen = Meteor.setInterval(function () {
+        if(moisture.get() > 30){
+            oxygen.set(oxygen.get() + 2);
+            Co2.set(Co2.get() - 2);
+        }else {
+            oxygen.set(oxygen.get() - 2)
+            Co2.set(Co2.get() + 2);
+        }
+
+        if(oxygen.get() <= 0){
+            oxygen.set(0);
+        }
+
+        if(Co2.get() <= 0){
+            Co2.set(0);
+        }
+        return oxygen.get();
+
+    }, 2000);
+    var Interval = Meteor.setInterval(function () {
+
 
 //Sensor Erhan, Moisture
         Meteor.call('getMoisture', function (err, res) {
@@ -68,22 +80,6 @@ Template.World.onCreated(function () {
             }
         });
 
-        if (oxygen.get() < 45   ) {
-            Co2.set(oxygen.get()  / 2);
-        } else {
-            Co2.set(30);
-        }
-
-
-        // Meteor.call('getC02', function (err, res) {
-        //     if (err) {
-        //         console.log(err);
-        //     } else {
-        //         console.log(res);
-        //         Co2.set(res);
-        //     }
-        // });
-
 
     }, 100);
     self.autorun(function () {
@@ -101,26 +97,7 @@ var light = new ReactiveVar(0);
 
 Template.World.helpers({
     counterC02: ()=> {
-        // Meteor.call('getC02', function (err, res) {
-        //     if (err) {
-        //         console.log(err);
-        //     } else {
-        //         Co2.set(res);
-        //     }
-        // });
         return Co2.get();
-    },
-
-    get02: () => {
-        Meteor.call('getOxygen', function (err, res) {
-            if (err) {
-                console.log(err);
-            } else {
-                oxygen.set(res);
-            }
-        });
-
-        return oxygen.get();
     },
 
 //Sensor Erhan, Moisture
@@ -135,6 +112,9 @@ Template.World.helpers({
 
         return moisture.get();
     },
+    get02: ()=> {
+                return oxygen.get();
+            },
 
 //Sensor Sander, Light
     get04: () => {
