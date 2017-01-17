@@ -42,7 +42,7 @@ Template.World.onCreated(function () {
     var self = this;
 
     var IntervalOxygen = Meteor.setInterval(function () {
-        if(moisture.get() > 30){
+        if(moisture.get() >= 40){
             oxygen.set(oxygen.get() + 1);
             Co2.set(Co2.get() - 1);
         }else {
@@ -54,11 +54,11 @@ Template.World.onCreated(function () {
             oxygen.set(0);
         }
 
-        if(oxygen.get() > 100) {
+        if(oxygen.get() >= 100) {
             oxygen.set(100);
         }
 
-        if(Co2.get() > 100) {
+        if(Co2.get() >= 100) {
             Co2.set(100);
         }
 
@@ -68,6 +68,13 @@ Template.World.onCreated(function () {
         return oxygen.get();
 
     }, 10000);
+
+    var intervalC02 = Meteor.setInterval(function () {
+        if(Co2.get() >= 100) {
+            alert("CO2 level is too high push the raindrop to nurture your plant")
+        }
+    },5000);
+
     var Interval = Meteor.setInterval(function () {
 
 
