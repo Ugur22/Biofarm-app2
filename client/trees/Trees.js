@@ -43,15 +43,23 @@ Template.World.onCreated(function () {
 
     var IntervalOxygen = Meteor.setInterval(function () {
         if(moisture.get() > 30){
-            oxygen.set(oxygen.get() + 2);
-            Co2.set(Co2.get() - 2);
+            oxygen.set(oxygen.get() + 1);
+            Co2.set(Co2.get() - 1);
         }else {
-            oxygen.set(oxygen.get() - 2)
-            Co2.set(Co2.get() + 2);
+            oxygen.set(oxygen.get() - 1)
+            Co2.set(Co2.get() + 1);
         }
 
         if(oxygen.get() <= 0){
             oxygen.set(0);
+        }
+
+        if(oxygen.get() > 100) {
+            oxygen.set(100);
+        }
+
+        if(Co2.get() > 100) {
+            Co2.set(100);
         }
 
         if(Co2.get() <= 0){
@@ -59,7 +67,7 @@ Template.World.onCreated(function () {
         }
         return oxygen.get();
 
-    }, 2000);
+    }, 10000);
     var Interval = Meteor.setInterval(function () {
 
 
